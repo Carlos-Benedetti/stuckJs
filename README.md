@@ -1,1 +1,1 @@
-#`(IN DEVELOPMENT)` two way data bind for vanilla js/html
+# `(IN DEVELOPMENT)` two way data bind for vanilla js/html
