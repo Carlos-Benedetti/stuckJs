@@ -1,0 +1,22 @@
+{
+  "name": "stuk",
+  "version": "1.0.0",
+  "description": "two way data bind for vanilla js/html",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --reporter spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pluralize": "^7.0.0",
+    "watchjs": "0.0.0"
+  },
+  "devDependencies": {
+    "@types/pluralize": "0.0.29",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "typescript": "^3.1.3"
+  }
+}
