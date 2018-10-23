@@ -1,45 +1,40 @@
-"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Binding = /** @class */ (function () {
-    function Binding(b) {
-        this.elementBindings = new Array;
-        //@ts-ignore
-        this.value = b.object[b.property];
-        Object.defineProperty(b.object, b.property, {
-            get: this.valueGetter,
-            set: this.valueSetter
-        });
-        //@ts-ignore
-        b.object[b.property] = this.value;
+function Binding(b) {
+    _this = this
+    this.elementBindings = []
+    this.value = b.object[b.property]
+    this.valueGetter = function(){
+        return _this.value;
     }
-    Binding.prototype.valueGetter = function () {
-        return this.value;
-    };
-    Binding.prototype.valueSetter = function (val) {
-        this.value = val;
-        if (this.elementBindings) {
-            for (var i = 0; i < this.elementBindings.length; i++) {
-                var binding = this.elementBindings[i];
-                binding.element[binding.attribute] = val;
-            }
+    this.valueSetter = function(val){
+        _this.value = val
+        for (var i = 0; i < _this.elementBindings.length; i++) {
+            var binding=_this.elementBindings[i]
+            binding.element[binding.attribute] = val
         }
-        return true;
-    };
-    Binding.prototype.addBinding = function (element, attribute, event) {
+    }
+    this.addBinding = function(element, attribute, event){
         var binding = {
             element: element,
-            attribute: attribute,
-            event: null
-        };
-        if (event) {
-            //@ts-ignore
-            element.addEventListener(event, function () { this.valueSetter(element[attribute]); }, false);
-            binding.event = event;
+            attribute: attribute
         }
-        this.elementBindings.push(binding);
-        element[attribute] = this.value;
-        return this;
-    };
-    return Binding;
-}());
+        if (event){
+            element.addEventListener(event, function(event){
+                _this.valueSetter(element[attribute]);
+            })
+            binding.event = event
+        }       
+        this.elementBindings.push(binding)
+        element[attribute] = _this.value
+        return _this
+    }
+
+    Object.defineProperty(b.object, b.property, {
+        get: this.valueGetter,
+        set: this.valueSetter
+    }); 
+
+    b.object[b.property] = this.value;
+}
+
 exports.Binding = Binding;

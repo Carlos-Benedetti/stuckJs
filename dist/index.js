@@ -1,12 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Binding_1 = require("./Binding");
+var binding = require("./Binding");
+console.log(binding)
 function bindPage(page) {
-    var input = document.querySelector('[stuk]');
-    new Binding_1.Binding({
-        object: page,
-        property: "a"
+    var input = document.querySelectorAll('[stuk]');
+    input.forEach(element =>{
+        new binding.Binding({
+            object: page,
+            property: element.getAttribute("stuk")
+        })
+            .addBinding(element, "value", "keyup");
+            page[element.getAttribute("stuk")] = 456;
     })
-        .addBinding(input, "value", "keyup");
 }
 exports.bindPage = bindPage;
