@@ -1,1 +1,1 @@
-# `(IN BETA)` two way data bind for vanilla js/html
+# `[BETA]` two way data bind for vanilla js/html
