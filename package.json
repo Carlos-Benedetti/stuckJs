@@ -1,13 +1,16 @@
 {
   "name": "stukjs",
-  "version": "1.0.1",
+  "version": "0.0.2",
   "description": "two way data bind for vanilla js/html",
   "main": "./dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "mocha --reporter spec"
-  },
-  "author": "",
+  "scripts": {},
+  "keywords": [
+    "under development",
+    "two-way-databind",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Carlos Benedetti",
   "license": "ISC",
   "dependencies": {},
   "repository": {

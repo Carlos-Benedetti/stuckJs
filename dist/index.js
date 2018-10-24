@@ -26,7 +26,6 @@ function bindPage(page) {
             property: element.getAttribute("stuk")
         })
             .addBinding(element, "value", "keyup");
-            page[element.getAttribute("stuk")] = 456;
     })
 }
 exports.bindPage = bindPage;
