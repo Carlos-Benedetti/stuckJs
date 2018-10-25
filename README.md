@@ -1,22 +1,22 @@
-# `[BETA]` stukJs- Simplified two way data bind for JS
+# `[BETA]` stukJs- Simplified two-way data bind for JS
 
 [![NPM](https://nodei.co/npm/stukjs.png)](https://nodei.co/npm/stukjs/)
 
-## Instalation
+## Installation
 
 `$ npm i stukjs --save`.
 
-## Using
+## Usage
 
-as most ts/js frameworks Nowadays for each page you have a main object containing all the page variables
-in this pluging you can easily bind a variable's value with one or multiple html elements just addind the `stuk` attribute as your variable's name as value.
+Pass an object containing all the variables that will be used by the page to `stuk.bindpage()`, and then add the `stuk` attribute to elements that should bind to a variable. The value passed to the `stuk` attribute should be an existing key in the object passed to `stuk.bindpage()`.
+Changes to the bound variable's value will be reflected in the page, and changes made to the bound element's value will also propagate back to the script.
 
-## Exemple
+## Example
 
 ```html
-<input stuk="name"> 
+<input stuk="name">
 <script>
-    stuk.bindPage({name:"Benedetti"})
+    stuk.bindPage({name:"Benedetti"});
 </script>
 ```
 
