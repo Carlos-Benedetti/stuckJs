@@ -1,6 +1,6 @@
 {
   "name": "stukjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "two way data bind for vanilla js/html",
   "main": "./dist/index.js",
   "scripts": {},
