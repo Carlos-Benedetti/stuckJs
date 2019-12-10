@@ -9,7 +9,7 @@ $ npm i stukjs --save
 ```
 ### browser:
 ```html
-<script src="https://unpkg.com/stukjs@0.1.2/Stuk.js"></script>
+<script src="https://unpkg.com/stukjs@latest/Stuk.js"></script>
 ```
 
 ## Usage
