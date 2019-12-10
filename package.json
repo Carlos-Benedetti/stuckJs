@@ -4,7 +4,7 @@
   "description": "two way data bind for vanilla js/html",
   "main": "./dist/index.js",
   "scripts": {
-    "prepublish": "npm run build && npm version patch",
+    "prepublish": "npm run build",
     "build": "tsc && tsc --build tsconfig.browser.json",
     "test": "jest"
   },
