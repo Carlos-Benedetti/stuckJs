@@ -1,9 +1,13 @@
 {
   "name": "stukjs",
-  "version": "0.0.4",
+  "version": "0.1.2",
   "description": "two way data bind for vanilla js/html",
   "main": "./dist/index.js",
-  "scripts": {},
+  "scripts": {
+    "prepublish": "npm run build && npm version patch",
+    "build": "tsc && tsc --build tsconfig.browser.json",
+    "test": "jest"
+  },
   "keywords": [
     "under development",
     "two-way-databind",
@@ -17,5 +21,9 @@
     "type": "git",
     "url": "https://gitlab.com/Cadub/stukjs"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "jest-puppeteer": "^4.3.0",
+    "puppeteer": "^2.0.0"
+  }
 }

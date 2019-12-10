@@ -1,31 +1,23 @@
-/**
- * @param {String} HTML representing a single element
- * @return {Element}
- */
-function htmlToElement(html) {
-    var template = document.createElement('template');
-    html = html.trim(); // Never return a text node of whitespace as the result
-    template.innerHTML = html;
-    return template.content.firstChild;
-}
+// test.js
+const timeout = 5000;
 
-'use strict';
-var expect = require('chai').expect;
-var index = require('../dist/index.js');
+describe(
+    '/ (Home Page)',
+    () => {
+        let page;
+        beforeAll(async () => {
+            page = await global.__BROWSER__.newPage();
+            await page.goto(`file://${__dirname}/../demo/index.html`);
+            const variable = await page.evaluate(() => user)
+        }, timeout);
 
-describe('getPlural function test', () => {
-    it('should return OK', () => {
-        var result = index.test('OK');
-        expect(result).to.equal('OK');
-    });
-    it('should return htmlElement', () => {
+        it('should load without error', async () => {
 
-        var result = htmlToElement("<input stuk='name' value='teste'>");
-        expect(result).to.equal(typeof HTMLElement);
-    });
-    // it('should return a list', () => {
-    //     var result = index.DataBind();
-    //     expect(result).to.equal('OK');
-    // });
-    
-});
+            const variable = await page.evaluate(() => user.name = "banana")
+            const input = await page.evaluate(() => document.querySelector('[stuk]'))
+
+            expect(input.value).toContain('banana');
+        });
+    },
+    timeout,
+);

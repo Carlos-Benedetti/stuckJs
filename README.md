@@ -1,10 +1,16 @@
-# `[BETA]` stukJs- Simplified two-way data bind for JS
+# stukJs- Simplified two-way data bind for JS
 
 [![NPM](https://nodei.co/npm/stukjs.png)](https://nodei.co/npm/stukjs/)
 
 ## Installation
-
-`$ npm i stukjs --save`.
+### npm:
+```shell
+$ npm i stukjs --save
+```
+### browser:
+```html
+<script src="https://unpkg.com/stukjs@0.1.2/Stuk.js"></script>
+```
 
 ## Usage
 
@@ -16,10 +22,10 @@ Changes to the bound variable's value will be reflected in the page, and changes
 ```html
 <input stuk="name">
 <script>
-    stuk.bindPage({name:"Benedetti"});
+    Stuk.bindPage({name:"Benedetti"});
 </script>
 ```
 
 ### Notes
 
-Basecode source: [wintellect](https://www.wintellect.com/data-binding-pure-javascript/).
+this code was based on: [wintellect](https://www.wintellect.com/data-binding-pure-javascript/).
